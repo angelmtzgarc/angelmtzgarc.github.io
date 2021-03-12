@@ -1,0 +1,299 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #000000;
+  color: #efebe286;
+  width: 100%;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 200px 0.5fr fr 2fr 1fr;
+      grid-template-rows: 200px 0.5fr fr 2fr 1fr;
+  gap: 2vw 2vw;
+      grid-template-areas: "title" "bio" "projects" "techStack";
+  margin: auto;
+  width: 80%;
+}
+
+.bio,
+.projects,
+.techStack {
+  padding: 3%;
+  border: 3px solid rgba(255, 166, 0, 0);
+  background-color: #191b28b2;
+  border-radius: 10px;
+}
+
+.title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  margin: auto;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.title h1 {
+  border-radius: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #191b28b2), to(#efebe286));
+  background: linear-gradient(#191b28b2 80%, #efebe286);
+}
+
+.bio {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: bio;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "portrait speech";
+}
+
+.bio .portrait {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: portrait;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #efebe286;
+  border-radius: 50%;
+}
+
+.bio .speech {
+  padding: 1vw;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: speech;
+  font-size: 20px;
+  border: 3px solid #efebe286;
+  border-radius: 10px;
+}
+
+.bio .speech .btn {
+  margin: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 30px;
+  margin: 5%;
+  border: 2px solid #efebe286;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #191b28b2;
+  color: #efebe286;
+  cursor: pointer;
+}
+
+.bio .speech .btn a {
+  text-decoration: none;
+  color: #efebe286;
+}
+
+.bio .speech .btn:hover {
+  border: 3px solid #191b28b2;
+  background-color: #efebe286;
+  color: #191b28b2;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 5px #efebe286;
+          box-shadow: 2px 2px 5px #efebe286;
+}
+
+.bio .speech .btn:hover a {
+  color: #191b28b2;
+}
+
+.projects {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: projects;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 100px 1fr 1fr;
+      grid-template-rows: 100px 1fr 1fr;
+  grid-gap: 50px;
+      grid-template-areas: "subtitle " "project-1 " "project-2";
+}
+
+.projects .subtitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: subtitle;
+}
+
+.projects .project {
+  border: 3px solid #efebe286;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "img info";
+  border-radius: 10px;
+}
+
+.projects .project .img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: img;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.projects .project img:hover {
+  -webkit-transition: 500ms linear;
+  transition: 500ms linear;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-box-shadow: 5px 10px 10px #efebe286;
+          box-shadow: 5px 10px 10px #efebe286;
+}
+
+.projects .project .info {
+  font-size: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: info;
+  text-align: justify;
+}
+
+.projects .project-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: project-1;
+}
+
+.projects .project-2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: project-2;
+}
+
+.projects .btn {
+  margin: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 30px;
+  margin: 5%;
+  border: 2px solid #efebe286;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #191b28b2;
+  color: #efebe286;
+  cursor: pointer;
+}
+
+.projects .btn:hover {
+  border: 3px solid #191b28b2;
+  background-color: #efebe286;
+  color: #191b28b2;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 5px #efebe286;
+          box-shadow: 2px 2px 5px #efebe286;
+}
+
+.techStack {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: techStack;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 100px 1fr 1fr;
+      grid-template-rows: 100px 1fr 1fr;
+  grid-gap: 25px;
+      grid-template-areas: "subtitle subtitle subtitle subtitle" "html css javascript wordpress" "python sql linux git";
+}
+
+.techStack .subtitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: subtitle;
+}
+
+.techStack .html {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: html;
+}
+
+.techStack .css {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: css;
+}
+
+.techStack .javascript {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: javascript;
+}
+
+.techStack .wordpress {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: wordpress;
+}
+
+.techStack .python {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: python;
+}
+
+.techStack .sql {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: sql;
+}
+
+.techStack .linux {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: linux;
+}
+
+.techStack .git {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: git;
+}
+
+.techStack .tech {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.techStack .tech img {
+  width: 80px;
+  height: 80px;
+}
+/*# sourceMappingURL=style.css.map */
