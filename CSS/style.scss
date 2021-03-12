@@ -11,6 +11,10 @@
         background-color: $oscuro;
         color: $claro;
         cursor: pointer;
+                a {
+                    text-decoration: none;
+                    color: $claro;
+                }
     }
     
     @mixin hoverButton {
@@ -19,6 +23,9 @@
         color: $oscuro;
         font-weight: bold;
         box-shadow: 2px 2px 5px $claro;
+        a {
+             color: $oscuro;
+                }
     }
     
     body {
@@ -81,16 +88,9 @@
             border-radius: 10px;
             .btn {
                 @include button();
-                a {
-                    text-decoration: none;
-                    color: $claro;
-                }
             }
             .btn:hover {
-                @include hoverButton();
-                a {
-                    color: $oscuro;
-                }
+                @include hoverButton();              
             }
         }
     }
