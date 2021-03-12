@@ -205,6 +205,11 @@ body {
   cursor: pointer;
 }
 
+.projects .btn a {
+  text-decoration: none;
+  color: #efebe286;
+}
+
 .projects .btn:hover {
   border: 3px solid #191b28b2;
   background-color: #efebe286;
@@ -212,6 +217,10 @@ body {
   font-weight: bold;
   -webkit-box-shadow: 2px 2px 5px #efebe286;
           box-shadow: 2px 2px 5px #efebe286;
+}
+
+.projects .btn:hover a {
+  color: #191b28b2;
 }
 
 .techStack {
