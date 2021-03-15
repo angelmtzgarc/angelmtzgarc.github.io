@@ -1,200 +1,226 @@
-    $claro:#efebe286;
-    $oscuro:#191b28b2;
-    @mixin button {
-        margin: 50px;
-        width: max-content;
-        height: 30px;
-        margin: 5%;
-        border: 2px solid $claro;
-        border-radius: 5px;
-        font-size: 18px;
-        background-color: $oscuro;
+$claro:#efebe286;
+$oscuro:#191b28b2;
+@mixin button {
+    margin: 50px;
+    width: max-content;
+    height: 30px;
+    margin: 5%;
+    border: 2px solid $claro;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: $oscuro;
+    color: $claro;
+    cursor: pointer;
+    a {
+        text-decoration: none;
         color: $claro;
-        cursor: pointer;
-        a {
-            text-decoration: none;
-            color: $claro;
-        }
     }
-    
-    @mixin hoverButton {
-        border: 3px solid $oscuro;
-        background-color: $claro;
+}
+
+@mixin hoverButton {
+    border: 3px solid $oscuro;
+    background-color: $claro;
+    color: $oscuro;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px $claro;
+    a {
         color: $oscuro;
-        font-weight: bold;
-        box-shadow: 2px 2px 5px $claro;
-        a {
-            color: $oscuro;
-        }
     }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: #000000;
-        color: $claro;
-        width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: $claro;
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 0.5fr 2fr 1fr;
+    gap: 2vw 2vw;
+    grid-template-areas: "title" "bio" "projects" "techStack";
+    margin: auto;
+    width: 80%;
+}
+
+.bio,
+.projects,
+.techStack {
+    padding: 3%;
+    border: 3px solid rgba(255, 166, 0, 0);
+    background-color: $oscuro;
+    border-radius: 10px;
+}
+
+.title {
+    grid-area: title;
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    h1 {
+        border-radius: 5px;
+        background: linear-gradient( $oscuro 80%, $claro);
     }
-    
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 200px 0.5fr 2fr 1fr;
-        gap: 2vw 2vw;
-        grid-template-areas: "title" "bio" "projects" "techStack";
-        margin: auto;
-        width: 80%;
+}
+
+.bio {
+    grid-area: bio;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "portrait speech";
+    .portrait {
+        grid-area: portrait;
+        width: 300px;
+        height: 300px;
+        border: 3px solid $claro;
+        border-radius: 50%;
     }
-    
-    .bio,
-    .projects,
-    .techStack {
-        padding: 3%;
-        border: 3px solid rgba(255, 166, 0, 0);
-        background-color: $oscuro;
+    .speech {
+        grid-area: speech;
+        padding: 1vw;
+        grid-area: speech;
+        font-size: 20px;
+        border: 3px solid $claro;
         border-radius: 10px;
-    }
-    
-    .title {
-        grid-area: title;
-        margin: auto;
-        text-align: center;
-        align-self: center;
-        h1 {
-            border-radius: 5px;
-            background: linear-gradient( $oscuro 80%, $claro);
+        .btn {
+            @include button();
+        }
+        .btn:hover {
+            @include hoverButton();
         }
     }
-    
-    .bio {
-        grid-area: bio;
+}
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    grid-gap: 50px;
+    grid-template-areas: "subtitle " "project-1 " "project-2";
+    .subtitle {
+        grid-area: subtitle;
+    }
+    .project {
+        border: 3px solid $claro;
+        padding: 20px;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "portrait speech";
-        .portrait {
-            grid-area: portrait;
-            width: 300px;
-            height: 300px;
-            border: 3px solid $claro;
-            border-radius: 50%;
-        }
-        .speech {
-            padding: 1vw;
-            grid-area: speech;
-            font-size: 20px;
-            border: 3px solid $claro;
+        grid-template-areas: "img info";
+        border-radius: 10px;
+        .img {
+            align-self: center;
+            grid-area: img;
+            width: 500px;
+            height: auto;
             border-radius: 10px;
-            .btn {
-                @include button();
-            }
-            .btn:hover {
-                @include hoverButton();
-            }
+            transition: 500ms;
         }
-    }
-    
-    .projects {
-        grid-area: projects;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px 1fr 1fr;
-        grid-gap: 50px;
-        grid-template-areas: "subtitle " "project-1 " "project-2";
-        .subtitle {
-            grid-area: subtitle;
-        }
-        .project {
-            border: 3px solid $claro;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas: "img info";
-            border-radius: 10px;
-            .img {
-                align-self: center;
-                grid-area: img;
-                width: 500px;
-                height: auto;
-                border-radius: 10px;
-                transition: 500ms;
-            }
+        @media (min-width: 799px) {
             img:hover {
                 transition: 500ms linear;
                 transform: scale(1.5);
                 box-shadow: 5px 10px 10px $claro;
             }
+        }
+        .info {
+            font-size: 20px;
+            grid-area: info;
+            text-align: justify;
+        }
+    }
+    .project-1 {
+        grid-area: project-1;
+    }
+    .project-2 {
+        grid-area: project-2;
+    }
+    .btn {
+        @include button
+    }
+    .btn:hover {
+        @include hoverButton()
+    }
+}
+
+.techStack {
+    grid-area: techStack;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    grid-gap: 25px;
+    grid-template-areas: "subtitle subtitle subtitle subtitle" "html css javascript wordpress" "python sql linux git";
+    .subtitle {
+        grid-area: subtitle;
+    }
+    .html {
+        grid-area: html;
+    }
+    .css {
+        grid-area: css;
+    }
+    .javascript {
+        grid-area: javascript;
+    }
+    .wordpress {
+        grid-area: wordpress;
+    }
+    .python {
+        grid-area: python;
+    }
+    .sql {
+        grid-area: sql;
+    }
+    .linux {
+        grid-area: linux;
+    }
+    .git {
+        grid-area: git;
+    }
+    .tech {
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 799px) {
+    .grid-container {
+        height: 300vh;
+        width: 100vw;
+        .bio {
+            grid-template-columns: 1fr;
+            grid-template-areas: "portrait" "speech";
+            .portrait,
+            .speech {
+                justify-self: center;
+            }
+            .speech {
+                width: 90%;
+                font-size: 22px;
+            }
+        }
+        .project {
+            grid-template-columns: 1fr;
+            grid-template-areas: "img" "info";
+            width: 90%;
+            .img,
             .info {
-                font-size: 20px;
-                grid-area: info;
-                text-align: justify;
+                justify-self: center;
             }
-        }
-        .project-1 {
-            grid-area: project-1;
-        }
-        .project-2 {
-            grid-area: project-2;
-        }
-        .btn {
-            @include button
-        }
-        .btn:hover {
-            @include hoverButton()
-        }
-    }
-    
-    .techStack {
-        grid-area: techStack;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 100px 1fr 1fr;
-        grid-gap: 25px;
-        grid-template-areas: "subtitle subtitle subtitle subtitle" "html css javascript wordpress" "python sql linux git";
-        .subtitle {
-            grid-area: subtitle;
-        }
-        .html {
-            grid-area: html;
-        }
-        .css {
-            grid-area: css;
-        }
-        .javascript {
-            grid-area: javascript;
-        }
-        .wordpress {
-            grid-area: wordpress;
-        }
-        .python {
-            grid-area: python;
-        }
-        .sql {
-            grid-area: sql;
-        }
-        .linux {
-            grid-area: linux;
-        }
-        .git {
-            grid-area: git;
-        }
-        .tech {
-            justify-self: center;
-            align-self: center;
-            text-align: center;
-            img {
-                width: 80px;
-                height: 80px;
+            .img {
+                width: 450px;
             }
         }
     }
-    
-    @media only screen and (max-device-width: 799px) {
-        .grid-container {
-            .bio {
-                grid-template-areas: "portrait" "speech";
-            }
-        }
-    }
+}
