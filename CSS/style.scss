@@ -219,7 +219,15 @@ body {
                 justify-self: center;
             }
             .img {
-                width: 450px;
+                width: 400px;
+            }
+        }
+        .techStack {
+            .tech {
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
             }
         }
     }
