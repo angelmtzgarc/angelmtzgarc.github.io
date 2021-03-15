@@ -190,3 +190,11 @@
             }
         }
     }
+    
+    @media only screen and (max-device-width: 799px) {
+        .grid-container {
+            .bio {
+                grid-template-areas: "portrait" "speech";
+            }
+        }
+    }
