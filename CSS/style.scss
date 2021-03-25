@@ -63,7 +63,7 @@ body {
     align-self: center;
     h1 {
         border-radius: 5px;
-        background: linear-gradient( $oscuro 80%, $claro);
+        background: linear-gradient( $oscuro 80%, #000000);
     }
 }
 
@@ -152,10 +152,10 @@ body {
 .techStack {
     grid-area: techStack;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr 1fr;
-    grid-gap: 25px;
-    grid-template-areas: "subtitle subtitle subtitle subtitle" "html css javascript wordpress" "python sql linux git";
+    grid-gap: 20px;
+    grid-template-areas: "subtitle subtitle subtitle subtitle subtitle" "html css javascript react redux" "wordpress python sql linux git";
     .subtitle {
         grid-area: subtitle;
     }
@@ -167,6 +167,12 @@ body {
     }
     .javascript {
         grid-area: javascript;
+    }
+    .react {
+        grid-area: react;
+    }
+    .redux {
+        grid-area: redux;
     }
     .wordpress {
         grid-area: wordpress;
@@ -205,28 +211,40 @@ body {
             .speech {
                 justify-self: center;
             }
+            .portrait {
+                grid-area: portrait;
+            }
             .speech {
+                grid-area: speech;
                 width: 90%;
                 font-size: 22px;
             }
         }
-        .project {
-            grid-template-columns: 1fr;
-            grid-template-areas: "img" "info";
+        .projects {
             width: 90%;
-            .img,
-            .info {
-                justify-self: center;
+            .project {
+                padding: 10px;
+                grid-template-columns: 1fr;
+                grid-template-areas: "img" "info";
+                width: 100vw;
+                .img,
+                .info {
+                    justify-self: center;
+                }
+                .img {
+                    grid-area: img;
+                    width: 350px;
+                }
+                .info {
+                    grid-area: info;
+                }
             }
-            .img {
-                width: 400px;
-            }
-        }
-        .techStack {
-            .tech {
-                img {
-                    width: 60px;
-                    height: 60px;
+            .techStack {
+                .tech {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
                 }
             }
         }
